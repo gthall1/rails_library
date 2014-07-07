@@ -9,7 +9,7 @@ class BooksController < ApplicationController
   end
 
   def new
-    @new_book = Book.new
+    @book = Book.new
   end
 
   def create
@@ -19,6 +19,7 @@ class BooksController < ApplicationController
       redirect_to books_path
     else
       flash[:notice] = "Please fill out this field."
+      render :new
     end
   end
 
