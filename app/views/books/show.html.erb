@@ -21,6 +21,15 @@
 
 
 <%= simple_form_for [@book, @review] do |f| %>
+  <% if @new_book.errors.any? %>
+  <h2>Errors:</h2>
+  <ul>
+    <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <%= f.input :rating, collection: 1..5 %>
   <%= f.input :body %>
 

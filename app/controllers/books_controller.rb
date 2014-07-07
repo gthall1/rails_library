@@ -15,9 +15,10 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
+      flash[:notice] = "Book has been added to the database!"
       redirect_to books_path
     else
-      render :new
+      flash[:notice] = "Please fill out this field."
     end
   end
 

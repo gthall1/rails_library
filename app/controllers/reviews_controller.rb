@@ -19,9 +19,10 @@ class ReviewsController < ApplicationController
     @review.book = @book
 
     if @review.save
+      flash[:notice] = "Review has been added!"
       redirect_to book_path(@book)
     else
-      render :new
+      flash[:notice] = "Please select an item in the list."
     end
   end
 
