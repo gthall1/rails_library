@@ -1,14 +1,6 @@
 <h1>Add a Book</h1>
 
-<%= simple_form_for @new_book, :html => {:multipart => true} do |f| %>
-  <% if @new_book.errors.any? %>
-  <h2>Errors:</h2>
-  <ul>
-    <% @new_book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
+<%= simple_form_for @book, :html => {:multipart => true} do |f| %>
 
   <%= f.input :title %>
   <%= f.input :author %>
